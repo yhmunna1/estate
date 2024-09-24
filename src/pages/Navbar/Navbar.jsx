@@ -12,7 +12,7 @@ const Navbar = () => {
       <li>
         <details>
           <summary>PROPERTY</summary>
-          <ul className="p-2 bg-sky-800 w-40">
+          <ul className="p-2 bg-red-600 w-40">
             <li>
               <Link to="/">FAMILY HOUSE</Link>
             </li>
@@ -40,7 +40,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className=" bg-sky-800">
+    <div className=" bg-red-600">
       <div className="navbar max-w-6xl mx-auto py-3">
         <div className="navbar-start">
           <div className="dropdown">
@@ -62,7 +62,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-sky-800 text-white rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-red-600 text-white rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               {menus}
             </ul>
@@ -84,7 +84,10 @@ const Navbar = () => {
               <FaCircleUser className="text-4xl text-white" />
             </div>
           </div>
-          <Link to="/login" className="btn btn-info text-white ms-2">
+          <Link
+            to="/login"
+            className="btn btn-ghost border-2 border-white text-white  ms-2"
+          >
             Login
           </Link>
         </div>
