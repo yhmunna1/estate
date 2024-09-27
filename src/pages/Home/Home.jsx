@@ -4,6 +4,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import Property from "./Property";
+import LatestProperty from "./LatestProperty";
 
 const Home = () => {
   return (
@@ -203,6 +205,8 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <Property></Property>
+      <LatestProperty></LatestProperty>
     </div>
   );
 };
