@@ -9,8 +9,8 @@
       "status": "sale",
       "area": "3000 sq ft",
       "location": "Los Angeles, CA",
-      "facilities": ["living room", "swimming pool", "kitchen"],
-      "view_property": "View Property"
+      "facilities": ["living room", "swimming pool", "kitchen"]
+      
     },
     {
       "id": 2,
@@ -22,8 +22,8 @@
       "status": "sale",
       "area": "2000 sq ft",
       "location": "San Francisco, CA",
-      "facilities": ["living room", "garage", "kitchen"],
-      "view_property": "View Property"
+      "facilities": ["living room", "garage", "kitchen"]
+      
     },
     {
       "id": 3,
@@ -35,8 +35,8 @@
       "status": "rent",
       "area": "1000 sq ft",
       "location": "New York, NY",
-      "facilities": ["living room", "balcony", "kitchen"],
-      "view_property": "View Property"
+      "facilities": ["living room", "balcony", "kitchen"]
+      
     },
     {
       "id": 4,
@@ -48,8 +48,8 @@
       "status": "rent",
       "area": "700 sq ft",
       "location": "Boston, MA",
-      "facilities": ["study area", "common room", "kitchen"],
-      "view_property": "View Property"
+      "facilities": ["study area", "common room", "kitchen"]
+      
     },
     {
       "id": 5,
@@ -61,8 +61,8 @@
       "status": "rent",
       "area": "1200 sq ft",
       "location": "Phoenix, AZ",
-      "facilities": ["healthcare", "community center", "kitchen"],
-      "view_property": "View Property"
+      "facilities": ["healthcare", "community center", "kitchen"]
+      
     },
     {
       "id": 6,
@@ -74,8 +74,8 @@
       "status": "rent",
       "area": "2500 sq ft",
       "location": "Miami, FL",
-      "facilities": ["living room", "swimming pool", "beach access"],
-      "view_property": "View Property"
+      "facilities": ["living room", "swimming pool", "beach access"]
+      
     },
     {
       "id": 7,
@@ -87,8 +87,8 @@
       "status": "sale",
       "area": "2200 sq ft",
       "location": "Austin, TX",
-      "facilities": ["living room", "garage", "kitchen"],
-      "view_property": "View Property"
+      "facilities": ["living room", "garage", "kitchen"]
+      
     },
     {
       "id": 8,
@@ -100,8 +100,8 @@
       "status": "rent",
       "area": "1500 sq ft",
       "location": "San Diego, CA",
-      "facilities": ["living room", "swimming pool", "kitchen"],
-      "view_property": "View Property"
+      "facilities": ["living room", "swimming pool", "kitchen"]
+      
     },
     {
       "id": 9,
@@ -113,8 +113,8 @@
       "status": "rent",
       "area": "1800 sq ft",
       "location": "Orlando, FL",
-      "facilities": ["healthcare", "community center", "kitchen"],
-      "view_property": "View Property"
+      "facilities": ["healthcare", "community center", "kitchen"]
+      
     },
     {
       "id": 10,
@@ -126,8 +126,8 @@
       "status": "rent",
       "area": "800 sq ft",
       "location": "Seattle, WA",
-      "facilities": ["study area", "gym", "kitchen"],
-      "view_property": "View Property"
+      "facilities": ["study area", "gym", "kitchen"]
+      
     },
     {
       "id": 11,
@@ -139,8 +139,8 @@
       "status": "sale",
       "area": "2800 sq ft",
       "location": "Chicago, IL",
-      "facilities": ["living room", "garden", "kitchen"],
-      "view_property": "View Property"
+      "facilities": ["living room", "garden", "kitchen"]
+      
     },
     {
       "id": 12,
@@ -152,8 +152,8 @@
       "status": "rent",
       "area": "1400 sq ft",
       "location": "Lake Tahoe, CA",
-      "facilities": ["living room", "lake view", "kitchen"],
-      "view_property": "View Property"
+      "facilities": ["living room", "lake view", "kitchen"]
+      
     }
   ]
   
