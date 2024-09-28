@@ -3,8 +3,8 @@ import logo from "../../assets/logo-06.png";
 
 const Footer = () => {
   return (
-    <div className=" bg-zinc-800 text-white py-20">
-      <div className="max-w-6xl mx-auto">
+    <div className=" bg-zinc-800 text-white">
+      <div className="max-w-6xl mx-auto pt-20">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center">
           <div>
             <img src={logo} className="w-52" alt="Logo" />
@@ -33,6 +33,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <p className="text-center pt-16 pb-5 text-zinc-400">
+        Copyright © 2024 - All right reserved - yhmunna
+      </p>
     </div>
   );
 };

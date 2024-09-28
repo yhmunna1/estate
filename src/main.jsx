@@ -5,6 +5,7 @@ import "./index.css";
 import Roots from "./layouts/Roots";
 import Home from "./pages/Home/Home";
 import Error from "./pages/Error/Error";
+import Login from "./pages/Login/Login";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
         loader: () => fetch("/properties.json"),
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
       },
     ],
   },

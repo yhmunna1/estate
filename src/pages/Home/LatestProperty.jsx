@@ -34,10 +34,10 @@ const LatestProperty = () => {
 
           {/* Show Load More button only if there are more properties to show */}
           {visibleCount < properties.length && (
-            <div className="text-center pt-5">
+            <div className="text-center pt-10">
               <button
                 onClick={handleLoadMore}
-                className="btn btn-warning border-red-500 bg-red-500 text-white"
+                className="btn btn-sm btn-ghost border-red-500  text-red-500"
               >
                 Load More
               </button>
