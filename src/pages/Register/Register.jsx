@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { FaFacebook, FaGoogle } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
-import { sendEmailVerification } from "firebase/auth";
+// import { sendEmailVerification } from "firebase/auth";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);

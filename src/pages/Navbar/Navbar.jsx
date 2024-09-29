@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo-07.png";
 import { FaCircleUser } from "react-icons/fa6";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleSignOut = () => {
+    logOut()
+      .than((result) => {
+        console.log("Sign out Successfully");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   const menus = (
     <>
       <li>
@@ -84,12 +97,21 @@ const Navbar = () => {
               <FaCircleUser className="text-4xl text-white" />
             </div>
           </div>
-          <Link
-            to="/login"
-            className="btn btn-ghost border-2 border-white text-white  ms-2"
-          >
-            Login
-          </Link>
+          {user ? (
+            <button
+              onClick={handleSignOut}
+              className="btn btn-ghost border-2 border-white text-white  ms-2"
+            >
+              sign Out
+            </button>
+          ) : (
+            <Link
+              to="/login"
+              className="btn btn-ghost border-2 border-white text-white  ms-2"
+            >
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </div>

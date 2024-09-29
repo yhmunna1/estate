@@ -1,13 +1,35 @@
+import { useContext, useState } from "react";
 import { FaFacebook, FaGoogle } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
+  const { signIn, googleLogin } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState("");
+
   const handleLogin = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
     console.log(email, password);
+
+    signIn(email, password)
+      .then((result) => {
+        console.log(result.user);
+        e.target.reset();
+
+        // Navigate after login
+        navigate(location?.state ? location.state : "/");
+        // Hide success toast after a few seconds
+        setTimeout(() => setSuccess(false), 3000);
+      })
+      .catch((error) => {
+        setErrorMessage(error.message);
+        console.error(error);
+      });
   };
 
   return (
@@ -47,8 +69,8 @@ const Login = () => {
               </a>
             </label>
           </div>
-          {/* {errorMessage && <p className="text-red-600">{errorMessage}</p>}
-          {success && <p className="text-green-600">{success}</p>} */}
+          {errorMessage && <p className="text-red-600">{errorMessage}</p>}
+
           <div className="form-control mt-6">
             <button
               type="submit"
