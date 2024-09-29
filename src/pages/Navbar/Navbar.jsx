@@ -53,7 +53,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className=" bg-red-600">
+    <div className=" bg-red-600 z-10">
       <div className="navbar max-w-6xl mx-auto py-3">
         <div className="navbar-start">
           <div className="dropdown">
@@ -88,22 +88,21 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{menus}</ul>
         </div>
         <div className="navbar-end">
-          <div
-            tabIndex={0}
-            role="button"
-            className="btn btn-ghost btn-circle avatar"
-          >
-            <div className="">
-              <FaCircleUser className="text-4xl text-white" />
-            </div>
-          </div>
           {user ? (
-            <button
-              onClick={handleSignOut}
-              className="btn btn-ghost border-2 border-white text-white  ms-2"
-            >
-              sign Out
-            </button>
+            <div className="flex items-center space-x-4">
+              <img
+                src={user.photoURL || "default-profile.png"}
+                alt="Profile"
+                className="w-10 h-10 rounded-full"
+              />
+              <span className="text-white">{user.displayName}</span>
+              <button
+                onClick={handleSignOut}
+                className="btn btn-ghost border-2 border-white text-white ms-2"
+              >
+                Sign Out
+              </button>
+            </div>
           ) : (
             <Link
               to="/login"

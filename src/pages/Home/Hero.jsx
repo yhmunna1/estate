@@ -6,7 +6,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 const Hero = () => {
   return (
-    <div>
+    <div className="z-0">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}

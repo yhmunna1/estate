@@ -23,12 +23,24 @@ const Login = () => {
 
         // Navigate after login
         navigate(location?.state ? location.state : "/");
-        // Hide success toast after a few seconds
-        setTimeout(() => setSuccess(false), 3000);
       })
       .catch((error) => {
         setErrorMessage(error.message);
         console.error(error);
+      });
+  };
+
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then((result) => {
+        console.log(result.user);
+
+        // Navigate after login
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        // setErrorMessage(error.message);
+        // console.error(error);
       });
   };
 
@@ -101,7 +113,7 @@ const Login = () => {
         </div>
         <div className="flex justify-center gap-4 border border-gray-300 w-1/3 mx-auto p-4 mb-12 rounded-full">
           <FaGoogle className="text-xl" />
-          <button className="font-medium text-base">
+          <button onClick={handleGoogleLogin} className="font-medium text-base">
             Continue with Google
           </button>
         </div>

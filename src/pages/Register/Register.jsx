@@ -2,10 +2,9 @@ import { useContext, useState } from "react";
 import { FaFacebook, FaGoogle } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
-// import { sendEmailVerification } from "firebase/auth";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, googleLogin } = useContext(AuthContext);
   const [errorMessage, setErrorMessage] = useState("");
   const [success, setSuccess] = useState("");
 
@@ -37,15 +36,26 @@ const Register = () => {
         setSuccess("User created successfully");
         console.log(result.user);
         e.target.reset();
-        // Send Email Verification
-        // sendEmailVerification(result.user).than(() => {
-        //   alert("Please check your email and verify");
-        // });
       })
       .catch((error) => {
         console.error(error);
       });
   };
+
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then((result) => {
+        console.log(result.user);
+
+        // Navigate after login
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        // setErrorMessage(error.message);
+        // console.error(error);
+      });
+  };
+
   return (
     <div className="max-w-6xl mx-auto">
       <div className="h-full border mt-20 py-10 px-28 rounded-lg">
@@ -132,7 +142,9 @@ const Register = () => {
         </div>
         <div className="flex justify-center gap-4 border border-gray-300 w-1/3 mx-auto p-4 mb-12 rounded-full">
           <FaGoogle className="text-xl" />
-          <p className="font-medium text-base">Continue with Google</p>
+          <button onClick={handleGoogleLogin} className="font-medium text-base">
+            Continue with Google
+          </button>
         </div>
       </div>
     </div>
