@@ -1,10 +1,11 @@
 import { useContext, useState } from "react";
-import { FaFacebook, FaGoogle } from "react-icons/fa6";
+import { FaGoogle } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Register = () => {
-  const { createUser, googleLogin } = useContext(AuthContext);
+  const { createUser, googleLogin, gitLogin } = useContext(AuthContext);
   const [errorMessage, setErrorMessage] = useState("");
   const [success, setSuccess] = useState("");
 
@@ -44,6 +45,20 @@ const Register = () => {
 
   const handleGoogleLogin = () => {
     googleLogin()
+      .then((result) => {
+        console.log(result.user);
+
+        // Navigate after login
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        // setErrorMessage(error.message);
+        // console.error(error);
+      });
+  };
+
+  const handleGitLogin = () => {
+    gitLogin()
       .then((result) => {
         console.log(result.user);
 
@@ -137,8 +152,10 @@ const Register = () => {
         </div>
 
         <div className="flex justify-center gap-4 border border-gray-300 w-1/3 mx-auto p-4 mb-4 rounded-full">
-          <FaFacebook className="text-xl" />
-          <p className="font-medium text-base">Continue with Facebook</p>
+          <FaGithub className="text-xl" />
+          <button onClick={handleGitLogin} className="font-medium text-base">
+            Continue with Github
+          </button>
         </div>
         <div className="flex justify-center gap-4 border border-gray-300 w-1/3 mx-auto p-4 mb-12 rounded-full">
           <FaGoogle className="text-xl" />
