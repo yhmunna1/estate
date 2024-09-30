@@ -3,9 +3,11 @@ import { FaHouse } from "react-icons/fa6";
 import { PiMapPinSimpleAreaBold } from "react-icons/pi";
 import { IoLocationSharp } from "react-icons/io5";
 import { GrShareOption } from "react-icons/gr";
+import { Link } from "react-router-dom";
 
 const SingleProperty = ({ property }) => {
   const {
+    id,
     image,
     estate_title,
     description,
@@ -52,9 +54,12 @@ const SingleProperty = ({ property }) => {
           </div>
         </div>
         <div className="card-actions items-center">
-          <button className="btn btn-warning btn-sm border-red-500 bg-red-500 text-white">
+          <Link
+            to={`/properties/${id}`}
+            className="btn btn-warning btn-sm border-red-500 bg-red-500 text-white"
+          >
             View Property
-          </button>
+          </Link>
         </div>
       </div>
     </div>
