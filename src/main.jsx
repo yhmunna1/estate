@@ -10,6 +10,7 @@ import Register from "./pages/Register/Register";
 import AuthProvider from "./providers/AuthProvider";
 import Contact from "./pages/Contact/Contact";
 import About from "./pages/About/About";
+import PrivateRoute from "./routes/PrivateRoute";
 import PropertyDetails from "./pages/PropertyDetails/PropertyDetails";
 
 const router = createBrowserRouter([
@@ -41,7 +42,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/properties/:id",
-        element: <PropertyDetails></PropertyDetails>,
+        element: (
+          <PrivateRoute>
+            <PropertyDetails></PropertyDetails>
+          </PrivateRoute>
+        ),
         loader: async ({ params }) => {
           const response = await fetch("/properties.json");
           const properties = await response.json();
