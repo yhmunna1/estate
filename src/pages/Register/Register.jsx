@@ -3,6 +3,7 @@ import { FaGoogle } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
   const { createUser, googleLogin, gitLogin } = useContext(AuthContext);
@@ -34,11 +35,26 @@ const Register = () => {
     // Create User:
     createUser(email, password)
       .then((result) => {
-        setSuccess("User created successfully");
-        console.log(result.user);
-        e.target.reset();
+        const user = result.user;
+
+        // Update profile with displayName and photoURL
+        updateProfile(user, {
+          displayName: name,
+          photoURL: photoUrl,
+        })
+          .then(() => {
+            setSuccess("User created successfully with profile updated");
+            console.log(user);
+            e.target.reset();
+            // Navigate after login
+            navigate(location?.state ? location.state : "/");
+          })
+          .catch((error) => {
+            console.error("Error updating profile:", error);
+          });
       })
       .catch((error) => {
+        setErrorMessage(error.message);
         console.error(error);
       });
   };
